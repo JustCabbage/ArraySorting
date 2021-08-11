@@ -9,3 +9,6 @@ This is a visualization of how arrays are sorted using a simple algorithm in c++
 - [+] Repopulate array on key
 - [+] Resize based on window resolution
 
+# Credits
+
+- [SFML](https://www.sfml-dev.org)
