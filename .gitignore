@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-
+*.user
 # Compiled Object files
 *.slo
 *.lo
@@ -24,9 +24,16 @@
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+#Directories
+.vs/
+Build/
+cmake-build-debug/
+x64
+Debug
+Release

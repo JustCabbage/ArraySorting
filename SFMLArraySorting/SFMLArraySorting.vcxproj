@@ -72,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\Program Files %28x86%29\VS Projects %282021%29\LIB\SFML\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Program Files %28x86%29\VS Projects %282021%29\LIB\SFML\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\Program Files %28x86%29\VS Projects %282021%29\LIB\SFML\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Program Files %28x86%29\VS Projects %282021%29\LIB\SFML\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\Program Files %28x86%29\VS Projects %282021%29\LIB\SFML\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Program Files %28x86%29\VS Projects %282021%29\LIB\SFML\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\Program Files %28x86%29\VS Projects %282021%29\LIB\SFML\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Program Files %28x86%29\VS Projects %282021%29\LIB\SFML\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -1,62 +1,70 @@
 #include <SFML/Graphics.hpp>
 #include <Windows.h>
 #include <iostream>
+#include <random>
 
 #define WIDTH 1920
 #define HEIGHT 720
-sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Array Sorting | Press Space to Populate New Array");
 
-int mainArray[WIDTH];
-float barWidth = 1;
+int SortingArray[WIDTH];
+float BarWidth = 1;
 
-void PopulateArray() {
+inline void PopulateArray() 
+{
     // POPULATE RANDOM VALUES
-    srand(time(NULL));
-    for (int i = 0; i < WIDTH / barWidth; i++) {
-        mainArray[i] = rand() % HEIGHT;
+    std::random_device RandomDevice;
+    std::mt19937 RandomGenerator(RandomDevice());
+    std::uniform_int_distribution<std::mt19937::result_type> Distribution(0, HEIGHT);
+    for (int i = 0; i < WIDTH / BarWidth; i++) 
+    {
+        SortingArray[i] = Distribution(RandomGenerator);
     }
 }
 
 
 int main()
 {
-    if (barWidth <= 0) barWidth = 1;
+    sf::RenderWindow Window(sf::VideoMode(WIDTH, HEIGHT), "Array Sorting | Press Space to Populate New Array");
+    if (BarWidth <= 0) BarWidth = 1;
     PopulateArray();
-    while (window.isOpen())
+    while (Window.isOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        while (Window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            switch (event.type)
+            {
+            case sf::Event::Closed:
+                Window.close();
+                break;
+            }
         }
-
-        window.clear(sf::Color::Black);
-
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
             PopulateArray();
 
-        // RENDER UNSORTED ARRAY INITIALLY, UPDATE EACH TIME SORTED
-        for (int i = 0; i < WIDTH / barWidth; i++) {
-            sf::RectangleShape rectangle(sf::Vector2f(barWidth, mainArray[i]));
-            rectangle.setFillColor(sf::Color::White);
-            rectangle.setPosition(i * barWidth, 0);
-            window.draw(rectangle);
+        Window.clear(sf::Color(191, 64, 191));
 
+        // RENDER UNSORTED ARRAY INITIALLY, UPDATE EACH TIME SORTED
+        for (int i = 0; i < WIDTH / BarWidth; i++) 
+        {
+            sf::RectangleShape Bar(sf::Vector2f(BarWidth, SortingArray[i]));
+            Bar.setFillColor(sf::Color(0,0,0));
+            Bar.setPosition(i * BarWidth, 0);
+            Window.draw(Bar);
         }
 
         // SORT ARRAY IN SEPARATE LOOP
-        for (int j = 0; j < (WIDTH / barWidth) - 1; j++) {
-            if (mainArray[j] > mainArray[j + 1]) {
-                int temp = mainArray[j];
-                mainArray[j] = mainArray[j + 1];
-                mainArray[j + 1] = temp;
+        for (int i = 0; i < (WIDTH / BarWidth) - 1; i++) 
+        {
+            if (SortingArray[i] > SortingArray[i + 1]) 
+            {
+                int Temp = SortingArray[i];
+                SortingArray[i] = SortingArray[i + 1];
+                SortingArray[i + 1] = Temp;
             }
         }
 
-        window.display();
-
-        
+        Window.display();
     }
     return 0;
 }
