@@ -1,13 +1,13 @@
-# SFMLArraySorting [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+# ArraySorting [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
-# What is SFMLArraySorting ?
+# What is this ?
 
-This is a visualization of how arrays are sorted using a simple algorithm in c++.
+This is a visualization of how arrays are sorted using the bubble sort algorithm in c++
 
 # Features
  
-- [+] Repopulate array on key
-- [+] Resize based on window resolution
+- Repopulate array on key
+- Resize based on window resolution
 
 # Credits
 
